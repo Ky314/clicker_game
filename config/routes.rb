@@ -14,4 +14,15 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+    # ゲーム画面の表示
+  # アプリケーションのトップページを 'game#index' に設定
+  root 'game#index'
+
+  # クリック操作
+  # POSTリクエストを 'game/click' に送り、'game#click' アクションを呼び出す
+  post 'game/click', to: 'game#click', as: 'click_game'
+
+  # アイテム購入
+  # POSTリクエストを 'game/buy_item/:id' に送り、'game#buy_item' アクションを呼び出す
+  post 'game/buy_item/:id', to: 'game#buy_item', as: 'buy_item'
 end
